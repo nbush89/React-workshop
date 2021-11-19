@@ -1,26 +1,25 @@
-import "./Greeting.css";
+import "./styles.css";
 import { useState } from "react";
 
-
-function Greeting() {
+const Greeting = () => {
   const [name, setName] = useState("");
-
   const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(event.target.name.value);
+    event.preventDefault(); //prevents reloading of the page after clicking submit
     setName(event.target.name.value);
+    console.log(event.target.name.value);
   };
 
   return (
     <>
+      {name && <div>Hello {name}!</div>}
       <form className="form" onSubmit={handleSubmit}>
-        <label htmlFor="name">Name:</label>
+        <label htmlFor="name">Enter Name:</label>
         <input id="name" name="name" />
-        <button>Submit name</button>
+        <button type="submit">Submit</button>
       </form>
-      <p className="name">Hello {name}!</p>
     </>
   );
-}
+};
 
 export default Greeting;
+
