@@ -11,13 +11,13 @@ function App() {
     <div className="App">
       <header className="App-header">
       {count > 10 && <Greeting/>}
-      <ol>
+      {/* <ol>
         {names.map((name) => (
           <li>
             <Greeting name={name} />
           </li>
         ))}
-      </ol>
+      </ol> */}
       <Counter count={count} setCount={setCount} />
       </header>
     </div>
